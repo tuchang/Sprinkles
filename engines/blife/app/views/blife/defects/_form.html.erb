@@ -1,0 +1,53 @@
+<%= form_for(defect) do |f| %>
+  <% if defect.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(defect.errors.count, "error") %> prohibited this defect from being saved:</h2>
+
+      <ul>
+      <% defect.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :summary %>
+    <%= f.text_field :summary %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :expected %>
+    <%= f.text_area :expected %>
+  </div>
+
+  <div class="field">
+    <%= f.label :actual %>
+    <%= f.text_area :actual %>
+  </div>
+
+  <div class="field">
+    <%= f.label :steps_to_reproduce %>
+    <%= f.text_area :steps_to_reproduce %>
+  </div>
+
+  <div class="field">
+    <%= f.label :severity %>
+    <%= f.collection_select(:blife_severity_id,Blife::Severity.all,:id,:name) %>
+   
+  </div>
+
+  <div class="field">
+    <%= f.label :priority %>
+    <%= f.collection_select(:blife_priority_id,Blife::Priority.all,:id, :name) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

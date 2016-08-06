@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @defect.summary %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @defect.description %>
+</p>
+
+<p>
+  <strong>Expected:</strong>
+  <%= @defect.expected %>
+</p>
+
+<p>
+  <strong>Actual:</strong>
+  <%= @defect.actual %>
+</p>
+
+<p>
+  <strong>Steps to reproduce:</strong>
+  <%= @defect.steps_to_reproduce %>
+</p>
+
+<p>
+  <strong>Severity:</strong>
+  <%= @defect.blife_severity_id %>
+</p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @defect.blife_priority_id%>
+</p>
+
+<%= link_to 'Edit', edit_defect_path(@defect) %> |
+<%= link_to 'Back', defects_path %>

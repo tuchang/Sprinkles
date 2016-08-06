@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Defects</h1>
+<div class="table-responsive">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Summary</th>
+      <th>Description</th>
+      <th>Expected</th>
+      <th>Actual</th>
+      <th>Steps to reproduce</th>
+      <th>Severity</th>
+      <th>Priority</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @defects.each do |defect| %>
+      <tr>
+        <td><%= defect.summary %></td>
+        <td><%= defect.description %></td>
+        <td><%= defect.expected %></td>
+        <td><%= defect.actual %></td>
+        <td><%= defect.steps_to_reproduce %></td>
+        <td><%= defect.blife_severity_id %></td>
+        <td><%= defect.blife_priority_id %></td>
+        <td><%= link_to 'Show', defect %></td>
+        <td><%= link_to 'Edit', edit_defect_path(defect) %></td>
+        <td><%= link_to 'Destroy', defect, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+</div>
+
+<%= link_to 'New Defect', new_defect_path %>

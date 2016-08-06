@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Sprinkles" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Sprinkles" %>">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+  </head>
+  <body>
+    <div class="container-fluid text-left">
+	    <main role="main">
+	    	<div class="row content">
+	    			<div class="col-md-2 sidenav">
+	    			
+	      			</div>
+	       		 <div class="col-md-8">
+	     			<%= render 'layouts/messages' %>
+	     			<%= yield %>
+	     		</div>
+	  			<div class="col-md-2 sidenav">
+				      <div class="well">
+				        <p>ADS</p>
+				      </div>
+				      <div class="well">
+				        <p>ADS</p>
+				      </div>
+				      <div class="well">
+				        <p>ADS</p>
+				      </div>
+				      <div class="well">
+				        <p>ADS</p>
+				      </div>
+				      <div class="well">
+				        <p>ADS</p>
+				      </div>
+	    		</div>
+	    	</div>
+	    </main>
+    </div>
+  </body>
+	<footer class="container-fluid text-center">
+		<p>Footer Text</p>
+	</footer>
+</html>
